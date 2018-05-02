@@ -30,20 +30,24 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req, res){
-	   res.render('index.html');
-	});
+   res.render('index.html');
+});
 
-	app.get('/signup', function(req, res){
-	   res.render('signup.html');
-	});
+app.get('/sign_up', function(req, res){
+   res.render('sign_up.html');
+});
 
-	app.post('/logincheck', function(req, res){
-	   if(req.body.id=="test"){
-	      if(req.body.pw=="test"){
-	         res.send("<h1>WELCOME</h1>");
-	      }
-	   }
-	});
+app.get('/', function(req, res){
+	res.send("<script>alert('Hello, Customes');</script>");
+})
+
+app.post('/logincheck', function(req, res){
+   if(req.body.id=="test"){
+      if(req.body.pw=="test"){
+         res.send("<h1>WELCOME</h1>");
+      }
+   }
+});
 
 
 http.createServer(app).listen(app.get('port'), function(){
