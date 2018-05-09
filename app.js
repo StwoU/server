@@ -28,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
 app.get('/', function(req, res){
    res.render('index.html');
 });
@@ -41,13 +40,6 @@ app.get('/', function(req, res){
 	res.send("<script>alert('Hello, Customes');</script>");
 })
 
-app.post('/logincheck', function(req, res){
-   if(req.body.id=="test"){
-      if(req.body.pw=="test"){
-         res.send("<h1>WELCOME</h1>");
-      }
-   }
-});
 
 
 http.createServer(app).listen(app.get('port'), function(){
