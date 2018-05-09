@@ -9,10 +9,14 @@
     <body align=center>
         <img src="https://hsc.apsva.us/wp-content/uploads/sites/20/2017/09/Welcome-02-web-version.jpg" height=200>
         <form method="GET" action="/sign_up">
-        ID : <input type="text"><br>
-        PW : <input type="password"><br>
-        <input type="submit" value=login class="btn btn-primary">
-        <button onclick="location.href='./sign_up.html'" class="btn btn-primary" action="/sign_up">sign up</button>
+        <table align=center width="500"><tbody>
+            <tr align=left><b>username</b></tr>
+            <tr><input type="text" placeholder="user ID" class="form-control"></tr>
+            <tr align=left><b>password</b></tr>
+            <tr><input type="password" placeholder="password" class="form-control"></tr>
+        <tr align=left><input type="submit" value=login class="btn btn-outline-primary">
+            <button onclick="location.href='./sign_up.html'" class="btn btn-outline-primary" action="/sign_up">sign up</button></tr>
+        </tbody></table>
         </form>
     </body>
 </HTML>
