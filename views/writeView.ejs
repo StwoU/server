@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head><title>write</title>
+    <meta charset=utf-8>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.main.css">
+    <style>
+        nav{float:left;width:20%;height:100%;}
+        td{text-align:left;}
+        section{float:left;width:80%;height:100%;}
+        div.profile{width:150px;height:200px;background-image:url('image/defaultBackGround.png');background-repeat:no-repeat;background-size:contain;}
+        label{display:inline-block;width:50px;text-align:right;}
+        textarea{vertical-align:top;resize:none;}
+    </style>
+</head>
+<body>
+    <header align="right">
+        <br>
+        <%=id%>님 환영합니다. <a>Logout</a> | <a>MyPage</a>
+        <hr>
+    </header>
+    <nav>
+        <div class="profile">
+            
+        </div>
+    </nav>
+    <section>
+        <h1 align=center>글쓰기</h1>
+        <hr>
+            <table class="table">
+            <tbody>
+                <tr><th width="50px">제목</th><td><%=rows[0].b_title%></td><th width="60px">작성자</th><td><%=rows[0].user_nick%></td><th width="60px">조회수</th><td><%=rows[0].b_count+1%></td></tr>
+                <tr><th colspan="6">내용</th></tr>
+                <tr><td colspan="6"><%=rows[0].b_contents%></td></tr>
+            </tbody>
+        </table>
+        <button type="button" onclick="location.href='/main'">목록</button>
+        <form method="post" action="/editPage">
+            <input type="hidden" name="b_no" value=<%=rows[0].b_no%>>
+            <input type="hidden" name="user_id" value=<%=rows[0].user_id%>>
+            <button type="submit">수정</button>
+        </form>
+        <form method="post" action="/remove" name="rForm">
+            <input type="hidden" name="bno" value="<%=rows[0].b_no%>">
+            <input type="hidden" name="uid" value="<%=rows[0].user_id%>">
+            <button type="submit">삭제</button>
+        </form>
+    </section>
+</body>
+</html>

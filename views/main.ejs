@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head><title>main</title>
+    <meta charset=utf-8>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.main.css">
+    <style>
+        nav{float:left;width:150px;height:100%;}
+        section{float:left;width:80%}
+        div.profile{width:150px;height:200px;background-image:url('image/defaultBackGround.png');background-repeat:no-repeat;background-size:contain;}
+        div.write{text-align:right}
+    </style>
+</head>
+<body>
+    <header align="right">
+        <br>
+        <a href="/logout">Logout</a> | <a>MyPage</a>
+        <hr>
+    </header>
+    <nav>
+        <div class="profile">
+            
+        </div>
+        
+    </nav>
+    <section>
+        <h1 align=center>전체 글</h1>
+        <hr>
+        <table class="table">
+            <thead><th>No.</th><th width="400px">제목</th><th>작성자</th><th>작성일</th><th>조회수</th></thead>
+            <tbody>
+                <%for(var i=0;i<rows.length;i++){%>
+                    <tr><td><%=rows[i].b_no%></td><td><a href="/writeView<%=rows[i].b_no%>"><%=rows[i].b_title%></a></td><td><%=rows[i].user_nick%></td><td><%=rows[i].b_date%><td><%=rows[i].b_count%></td></tr>
+                <%}%>
+            </tbody>
+        </table>
+        <div class="write">
+        <button type=button onclick="location.href='/write'">글쓰기</button>
+        </div>
+        <div align=center> &lt;<%for(var i=0;i<(rows2length/10);i++){%>
+            <a href="/main<%=i+1%>"> <%=i+1%> </a> 
+            <%}%> &gt;</div>
+    </section>
+</body>
+</html>

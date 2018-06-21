@@ -8,15 +8,15 @@
     </head>
     <body align=center>
         <img src="https://hsc.apsva.us/wp-content/uploads/sites/20/2017/09/Welcome-02-web-version.jpg" height=200>
-        <form method="GET" action="/sign_up">
+        <form method="POST" action='/logincheck'>
         <table align=center width="300"><tbody>
             <tr align=left><td><b>username</b></td></tr>
-            <tr><td><input type="text" placeholder="user ID" class="form-control" width="300"></td></tr>
+            <tr><td><input type="text" name="id" placeholder="user ID" class="form-control" width="300"></td></tr>
             <tr align=left><td><b>password</b></td></tr>
-            <tr><td><input type="password" placeholder="password" class="form-control" width="300"></td></tr>   
+            <tr><td><input type="password" name="password" placeholder="password" class="form-control" width="300"></td></tr>   
         </tbody></table>
-        <input type="submit" value=login class="btn btn-primary">
-            <button onclick="location.href='./sign_up.html'" class="btn btn-primary">sign up</button>
+            <input type="submit" value=login class="btn btn-primary">
+            <input type="button" value="sign up" onclick="location.href='./sign_up'" class="btn btn-primary">
         </form>
     </body>
 </HTML>

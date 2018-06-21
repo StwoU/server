@@ -7,23 +7,24 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.main.css">
     </head>
     <body>
-        <form>
+        <form method=POST action="/signupCheck">
             <table class="table">
                 <thead></thead>
                 <tbody>
-                <tr><th scope="row">아이디</th><td><input type="txt"></td></tr>
-                <tr><th scope="row">비밀번호</th><td><input type="password"></td></tr>
-                <tr><th scope="row">비밀번호 확인</th><td><input type="password"></td></tr>
-                <tr><th scope="row">이름</th><td><input type="txt"><br></td></tr>
-                <tr><th scope="row">생년월일</th><td><input type="date"></td></tr>
-                <tr><th scope="row">이메일</th><td><input type="txt"></td></tr>
-                <tr><th scope="row">전화번호</th><td><input type="number"></td></tr>
+                <tr><th scope="row">아이디</th><td><input type="txt" name="id" placeholder="user_email"><td></tr>
+                <tr><th scope="row">비밀번호</th><td><input name="pw" type="password"></td></tr>
+                <tr><th scope="row">비밀번호 확인</th><td><input name="confirm" type="password"></td></tr>
+                <tr><th scope="row">이름</th><td><input name="name" type="txt"><br></td></tr>
+                <tr><Th scope="row">닉네임</Th><td><input type="txt" name="nick"></td></tr>
+                <tr><th scope="row">생년월일</th><td><input type="date" name="birth"></td></tr>
+                <tr><th scope="row">전화번호</th><td><input type="txt" placeholder="'-'없이 작성" name="phone"></td></tr>
                 </tbody>
             </table>
         
         개인정보는 회원 탈퇴시에도 파기되지 않고 영구히 보관됩니다.<br>
-        동의 하십니까? <input type="checkbox"><br>
-        <button>확인</button><button onclick="history.go(-1)">이전</button>
+        동의 하십니까? <input type="checkbox" value=1 name="check"><br>
+        <input type="submit" value="확인" class="btn btn-success">
+        <input type="button" value="이전" onclick="history.go(-1)" class="btn btn-primary">
         </form>
     </body>
 </HTML>

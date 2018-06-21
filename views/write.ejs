@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><title>write</title>
+    <meta charset=utf-8>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.main.css">
+    <style>
+        nav{float:left;width:20%;height:100%;}
+        section{float:left;width:80%;height:100%;}
+        div.profile{width:150px;height:200px;background-image:url('image/defaultBackGround.png');background-repeat:no-repeat;background-size:contain;}
+        div.content{width:600px;}
+        label{display:inline-block;width:50px;text-align:right;}
+        textarea{vertical-align:top;resize:none}
+        
+    </style>
+</head>
+<body>
+    <header align="right">
+        <br>
+        <%=id%>님 환영합니다. <a href="index.html">Logout</a> | <a>MyPage</a>
+        <hr>
+    </header>
+    <nav>
+        <div class="profile">
+            
+        </div>
+    </nav>
+    <section>
+        <h1 align=center>글쓰기</h1>
+        <hr>
+        <form method="post" action="/writeCheck">
+            <div class="content">
+                <label for="title">제목</label> <input type=text id="title" name="title" width=70><hr>
+                <label for="content">내용</label> <textarea id="content" cols="70" rows="20" wrap=soft name="contents"></textarea>
+            </div>
+                <button type="submit">등록</button> <button type="button" onclick="history.back();">취소</button>
+        </form>
+    </section>
+</body>
+</html>
